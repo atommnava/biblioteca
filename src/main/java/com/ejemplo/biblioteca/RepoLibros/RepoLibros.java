@@ -24,7 +24,9 @@ public class RepoLibros {
         return libros;
     }
 
-    public Optional<Libros> BuscarId(long idLibro){
-        return libros.stream().filter(libros1 -> libros1.getIdLibro() == idLibro).findFirst();
+    public Optional<Libros> BuscaId(long idLibro){
+        return libros.stream()
+                .filter(libros1 -> libros1.getIdLibro() == idLibro)
+                .findFirst();
     }
 }
