@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class RepoLibros {
@@ -17,5 +18,13 @@ public class RepoLibros {
         libros.add(new Libros(3L, "J.K. Rowling", "Harry Potter y la Piedra Filosofal", LocalDate.of(1997, 6, 26)));
         libros.add(new Libros(4L, "George Orwell", "1984", LocalDate.of(1949, 6, 8)));
         libros.add(new Libros(5L, "F. Scott Fitzgerald", "El Gran Gatsby", LocalDate.of(1925, 4, 10)));
+    }
+
+    public List<Libros> findAll(){
+        return libros;
+    }
+
+    public Optional<Libros> BuscarId(long idLibro){
+        return libros.stream().filter(libros1 -> libros1.getIdLibro() == idLibro).findFirst();
     }
 }
