@@ -44,6 +44,6 @@ public class BibliotecaController {
         copia.setIdLibro(8);
         copia.setTitulo("Copia de prueba");
 
-        return "Originak: " + original.toString() + " | Copia: " + copia.toString();
+        return "Original: " + original.toString() + "\n" + "Copia: " + copia.toString();
     }
 }

@@ -48,9 +48,9 @@ public class Libros implements Cloneable{
     }
 
     @Override
-    public Libros clone(){
+    public Libros clone() {
         try {
-            return (Libros)super.clone();
+            return (Libros) super.clone();
         } catch (CloneNotSupportedException ERROR) {
             throw new AssertionError();
         }
