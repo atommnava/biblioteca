@@ -2,7 +2,8 @@ package com.ejemplo.biblioteca.Model;
 
 import java.time.LocalDate;
 
-public class Libros {
+public class Libros implements Cloneable{
+
     private long idLibro;
     private String autor, titulo;
     private LocalDate fechaPublicacion;
@@ -26,7 +27,32 @@ public class Libros {
         return titulo;
     }
 
+    public void setIdLibro(long idLibro) {
+        this.idLibro = idLibro;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public void setFechaPublicacion(LocalDate fechaPublicacion) {
+        this.fechaPublicacion = fechaPublicacion;
+    }
+
     public LocalDate getFechaPublicacion() {
         return fechaPublicacion;
+    }
+
+    @Override
+    public Libros clone(){
+        try {
+            return (Libros)super.clone();
+        } catch (CloneNotSupportedException ERROR) {
+            throw new AssertionError();
+        }
     }
 }
